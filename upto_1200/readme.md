@@ -1,1 +1,1 @@
-questions rating bove 700+
+questions rating above 700+
