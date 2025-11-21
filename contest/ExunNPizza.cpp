@@ -9,4 +9,5 @@ int main() {
 	cout << l*r << endl;
 	
 
+	
 }
