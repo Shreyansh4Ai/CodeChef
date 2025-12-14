@@ -9,4 +9,5 @@ int main() {
 	if(n>=5) cout << 1000 << endl ; 
 	else cout << n*200 << endl;
 
+	
 }
