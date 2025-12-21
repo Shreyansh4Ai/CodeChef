@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int TC;
+    cin >> TC;
+    while (TC--) {
+        int N, K;
+        cin >> N >> K;
+        vector<pair<int,int>> usage(N);
+        for (int i = 0; i < N; i++) {
+            cin >> usage[i].first >> usage[i].second; // Ti, Di
+        }
+
+        long long total = 0;
+        for (int i = 0; i < N; i++) {
+            int Ti = usage[i].first;
+            int Di = usage[i].second;
+
+            if (K >= Ti) {
+                K -= Ti; // all free
+            } else if (K > 0) {
+                total += (Ti - K) * 1LL * Di; // partially free
+                K = 0;
+            } else {
+                total += Ti * 1LL * Di; // fully charged
+            }
+        }
+        cout << total << "\n";
+    }
+    return 0;
+}
