@@ -1,0 +1,16 @@
+        std::vector<int> count(10001, 0); // Frequency count of each element
+        int maxVal = 1, maxFreq = 0;
+
+        for (int x : arr) {
+            count[x]++;
+        }
+
+        for (int i = 1; i <= 10000; ++i) {
+            if (count[i] > maxFreq) {
+                maxFreq = count[i];
+                maxVal = i;
+            }
+        }
+
+        return {maxVal, maxFreq};
+    
