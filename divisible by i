@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int T;
+    cin >> T;
+    while (T--) {
+        int N;
+        cin >> N;
+
+        vector<int> P(N);
+        P[0] = (N + 1) / 2;
+
+        for (int i = 1; i < N; i++) {
+            if (i % 2 == 1)
+                P[i] = P[i - 1] + i;
+            else
+                P[i] = P[i - 1] - i;
+        }
+
+        for (int x : P)
+            cout << x << " ";
+        cout << "\n";
+    }
+
+    return 0;
+}
